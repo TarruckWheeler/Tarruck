@@ -1,0 +1,1613 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Untitled</title>
+  
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarruck Wheeler - AI & Public Policy Innovator | Stanford MIP</title>
+    <meta name="description" content="Tarruck Wheeler - Stanford MIP student, ODNI researcher, N.E.T. founder, and neurodiversity advocate. Creating AI-powered solutions for inclusive education and public policy.">
+    <meta name="author" content="Tarruck Wheeler">
+    <meta name="keywords" content="Tarruck Wheeler, Stanford, AI, Public Policy, Neurodiversity, ADHD, Dyslexia, Autism, N.E.T., ODNI">
+    <meta property="og:title" content="Tarruck Wheeler - AI & Public Policy Innovator">
+    <meta property="og:description" content="Stanford MIP student transforming challenges into catalysts for innovation in AI, education, and public policy">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tarruckwheeler.github.io">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset and Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #3498DB;
+            --secondary: #9B59B6;
+            --success: #27AE60;
+            --warning: #F39C12;
+            --danger: #E74C3C;
+            --dark: #1A1A2E;
+            --light: #F8F9FA;
+            --text: #2C3E50;
+            --text-light: #6C757D;
+            --stanford: #8C1515;
+            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Base Styles */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Loader */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(52, 152, 219, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, #F5F7FA 0%, #C3CFE2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(0deg) translateY(0); }
+            50% { transform: rotate(180deg) translateY(-50px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--bg-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            background: white;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge.stanford {
+            background: var(--stanford);
+            color: white;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .profile-image {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            background: var(--bg-gradient);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            z-index: -1;
+            animation: morphing 10s ease-in-out infinite;
+        }
+
+        @keyframes morphing {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-tag {
+            padding: 0.4rem 1rem;
+            background: rgba(52, 152, 219, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            position: relative;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-date {
+            position: absolute;
+            top: 2rem;
+            width: 45%;
+            text-align: center;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-date {
+            right: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            left: 0;
+        }
+
+        .timeline-content h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content h5 {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-content li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+        }
+
+        .project-image {
+            height: 300px;
+            background: var(--bg-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .project-featured .project-image {
+            height: 400px;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-label {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            padding: 0.3rem 0.8rem;
+            background: var(--light);
+            color: var(--text);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .project-link-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .project-link-secondary {
+            background: var(--light);
+            color: var(--text);
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Publications Section */
+        .publications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .publication-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .publication-card h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .publication-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 30px;
+            padding: 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+
+        .mission-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mission h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Awards Section */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .award-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .award-card h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .award-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text);
+            text-decoration: none;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .contact-link:hover {
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--light);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-text {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .project-featured {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                margin-left: 40px;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+
+            .timeline-date {
+                position: static;
+                width: 100%;
+                text-align: left;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Focus Styles */
+        :focus {
+            outline: 3px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        /* Print Styles */
+        @media print {
+            nav, .cta-buttons, .contact-form {
+                display: none;
+            }
+
+            body {
+                color: black;
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p>Loading amazing things...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-brand">
+                <span>🚀</span>
+                Tarruck Wheeler
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#mission">Mission</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm Tarruck Wheeler</h1>
+            <p class="subtitle">AI & Public Policy Innovator • Neurodiversity Advocate • Jack Kent Cooke Scholar</p>
+            
+            <div class="hero-badges">
+                <div class="badge stanford">
+                    <span>🎓</span> Stanford MIP 2025-2027
+                </div>
+                <div class="badge">
+                    <span>🏛️</span> ODNI Researcher
+                </div>
+                <div class="badge">
+                    <span>🧠</span> N.E.T. Founder
+                </div>
+                <div class="badge">
+                    <span>♾️</span> Autism, ADHD, Dyslexia
+                </div>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <span>🚀</span> View My Work
+                </a>
+                <a href="https://www.linkedin.com/in/tarruck/" target="_blank" class="btn btn-secondary">
+                    <span>💼</span> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p>Transforming challenges into catalysts for innovation</p>
+        </div>
+
+        <div class="about-content">
+            <div class="profile-image">
+                <div class="profile-placeholder">
+                    👨‍💻
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h3>From Nontraditional Learner to Stanford Innovator</h3>
+                <p>
+                    I'm Tarruck Wheeler, a Master's in International Policy student at Stanford University, 
+                    with a unique perspective shaped by autism, ADHD, and dyslexia. These experiences 
+                    haven't limited me—they've fueled my passion for creating inclusive technology and 
+                    policy solutions.
+                </p>
+                <p>
+                    As the founder of N.E.T. (Neurodiverse Educational Testing), I'm revolutionizing 
+                    how we identify and support neurodiverse learners through AI-powered solutions. 
+                    My work spans from quantum computing research at ODNI to mental health advocacy 
+                    at organizations like Omena and the VA.
+                </p>
+                <p>
+                    Currently completing my undergraduate studies in Computer Science and International 
+                    Relations at Florida Atlantic University's Honors College, I bring technical expertise 
+                    and policy insight to every project I tackle.
+                </p>
+
+                <div class="skills">
+                    <span class="skill-tag">AI & Machine Learning</span>
+                    <span class="skill-tag">Quantum Computing</span>
+                    <span class="skill-tag">Public Policy</span>
+                    <span class="skill-tag">Cybersecurity</span>
+                    <span class="skill-tag">Neurodiversity Advocacy</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Prompt Engineering</span>
+                    <span class="skill-tag">Leadership</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header">
+            <h2>Professional Journey</h2>
+            <p>From intelligence research to nonprofit leadership</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Office of the Director of National Intelligence (ODNI)</h4>
+                    <h5>Research Intern & Project Coordinator</h5>
+                    <ul>
+                        <li>Leading projects in quantum computing, cybersecurity, and emerging technologies</li>
+                        <li>Developing neurodiversity-at-work programs for the Intelligence Community</li>
+                        <li>Contributing to national security innovations</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">July 2024 - Present</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Neurodiverse Educational Testing (N.E.T.)</h4>
+                    <h5>Founder & CEO</h5>
+                    <ul>
+                        <li>Built AI-powered diagnostic tools for autism, ADHD, and dyslexia</li>
+                        <li>Established nonprofit division for underserved communities</li>
+                        <li>Partnering with schools and healthcare providers globally</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">April 2024 - Present</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>U.S. Department of Veterans Affairs</h4>
+                    <h5>AI Content Executive Officer</h5>
+                    <ul>
+                        <li>Developed AI-driven content strategies for veteran engagement</li>
+                        <li>Launched 'Digital Stories' initiative using GPT-4 and NLP</li>
+                        <li>Improved veteran services through innovative AI applications</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Aug 2023 - Dec 2024</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Institute for Strategic Policy Solutions</h4>
+                    <h5>Board Member</h5>
+                    <ul>
+                        <li>Served on financial and steering committees</li>
+                        <li>Participated in AI law and ethics panel with 2000+ viewers</li>
+                        <li>Engaged with Secretary of State on election policy</li>
+                    </ul>
+                </div>
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Aug 2023 - Present</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <p>Innovation at the intersection of AI, accessibility, and education</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Featured Project: N.E.T. -->
+            <div class="project-card project-featured">
+                <div class="project-image">
+                    <span>🧬</span>
+                </div>
+                <div class="project-content">
+                    <span class="project-label">Flagship Initiative</span>
+                    <h3>N.E.T. - Neurodiverse Educational Testing</h3>
+                    <p>
+                        Revolutionary AI-powered platform providing accessible pre-screening for 
+                        autism, ADHD, dyslexia, and dyscalculia. Features real-time personalized 
+                        assessments with strict privacy standards and a nonprofit division for 
+                        underserved communities.
+                    </p>
+                    <p>
+                        Currently partnering with educational institutions and healthcare providers 
+                        globally to enhance early recognition and support for learning differences.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">AI/ML</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Privacy-First</span>
+                        <span class="tech-badge">Healthcare Tech</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link project-link-primary">
+                            <span>🚀</span> Learn More
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VisionFocus -->
+            <div class="project-card">
+                <div class="project-image">
+                    <span>🧠</span>
+                </div>
+                <div class="project-content">
+                    <h3>VisionFocus 2.0</h3>
+                    <p>
+                        AI-powered learning assistant designed for students with ADHD and dyslexia. 
+                        Features attention monitoring, customizable text display, and gamified 
+                        progress tracking.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Web Speech API</span>
+                        <span class="tech-badge">Accessibility</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://tarruckwheeler.github.io/VisionFocus/" class="project-link project-link-primary">
+                            <span>🚀</span> Try Demo
+                        </a>
+                        <a href="https://github.com/tarruckwheeler/VisionFocus" class="project-link project-link-secondary">
+                            <span>📂</span> View Code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Glossary -->
+            <div class="project-card">
+                <div class="project-image">
+                    <span>🤖</span>
+                </div>
+                <div class="project-content">
+                    <h3>Visual AI Glossary</h3>
+                    <p>
+                        Comprehensive AI terminology guide designed specifically for learners with 
+                        ADHD and dyslexia. Makes complex AI concepts accessible through visual 
+                        learning and clear explanations.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">HTML/CSS</span>
+                        <span class="tech-badge">Accessibility</span>
+                        <span class="tech-badge">Education</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://tarruckwheeler.github.io/ai-glossary" class="project-link project-link-primary">
+                            <span>📚</span> View Glossary
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ODNI Research -->
+            <div class="project-card">
+                <div class="project-image">
+                    <span>🔐</span>
+                </div>
+                <div class="project-content">
+                    <h3>Quantum Computing Security Research</h3>
+                    <p>
+                        Leading classified research projects at ODNI focusing on quantum computing 
+                        applications for national security and developing frameworks for inclusive 
+                        innovation in intelligence.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Quantum Computing</span>
+                        <span class="tech-badge">Cybersecurity</span>
+                        <span class="tech-badge">Research</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link project-link-secondary">
+                            <span>🔒</span> Classified
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="section-header">
+            <h2>Publications & Thought Leadership</h2>
+            <p>Contributing to the global conversation on technology and inclusion</p>
+        </div>
+
+        <div class="publications-grid">
+            <div class="publication-card">
+                <h4>Cultural Glimpses: Visual Artistry from the Shores of Southern Thailand</h4>
+                <p>
+                    Exploring the intersection of technology and cultural preservation through 
+                    visual storytelling and digital archiving methods.
+                </p>
+            </div>
+
+            <div class="publication-card">
+                <h4>Digital Vaults and Virtual Locks: The Imperative of Password Security in the Modern Era</h4>
+                <p>
+                    Comprehensive analysis of cybersecurity challenges and solutions for 
+                    protecting digital identities in an increasingly connected world.
+                </p>
+            </div>
+
+            <div class="publication-card">
+                <h4>The Omena Movement and the Power of Digitization in Addressing Emotional Abuse in Madagascar</h4>
+                <p>
+                    Case study on leveraging digital platforms for mental health advocacy 
+                    and support in developing nations.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards">
+        <div class="section-header">
+            <h2>Recognition & Awards</h2>
+            <p>Honored for innovation and service</p>
+        </div>
+
+        <div class="awards-grid">
+            <div class="award-card">
+                <div class="award-icon">🏆</div>
+                <h4>Jack Kent Cooke Scholar</h4>
+                <p>Prestigious scholarship recognizing exceptional academic achievement and leadership</p>
+            </div>
+
+            <div class="award-card">
+                <div class="award-icon">🎖️</div>
+                <h4>James L. Watt Service Award</h4>
+                <p>Recognition for outstanding community service and social impact</p>
+            </div>
+
+            <div class="award-card">
+                <div class="award-icon">⭐</div>
+                <h4>2025 Distinguished Student Award</h4>
+                <p>Honor for academic excellence and innovative contributions</p>
+            </div>
+
+            <div class="award-card">
+                <div class="award-icon">🏛️</div>
+                <h4>PPIA Public Service Fellow</h4>
+                <p>George Washington University fellowship for future policy leaders</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission">
+        <div class="mission">
+            <div class="mission-content">
+                <h2>My Mission</h2>
+                <p>
+                    To harness the power of AI and emerging technologies to create a more inclusive 
+                    world where neurodiversity is celebrated, not stigmatized. Through innovation in 
+                    education, public policy, and technology, I'm working to ensure that every mind—
+                    regardless of how it works—has the tools and opportunities to reach its full potential.
+                </p>
+
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">20%</div>
+                        <div class="stat-label">of students have learning differences</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1 in 5</div>
+                        <div class="stat-label">children have dyslexia</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">11%</div>
+                        <div class="stat-label">of children have ADHD</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Lives to impact by 2050</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Let's Connect</h2>
+            <p>Always excited to collaborate on projects that drive transformative, inclusive change</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>
+                    Whether you're a nonprofit looking for innovative solutions, a government agency 
+                    interested in inclusive policy, an investor passionate about social impact, or 
+                    a fellow advocate for neurodiversity—I'd love to hear from you!
+                </p>
+
+                <div class="contact-links">
+                    <a href="mailto:tarruck@stanford.edu" class="contact-link">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <strong>Email</strong><br>
+                            tarruck@stanford.edu
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tarruck/" target="_blank" class="contact-link">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            linkedin.com/in/tarruck
+                        </div>
+                    </a>
+                    <a href="https://github.com/tarruckwheeler" target="_blank" class="contact-link">
+                        <div class="contact-icon">🐙</div>
+                        <div>
+                            <strong>GitHub</strong><br>
+                            github.com/tarruckwheeler
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-control" required 
+                              placeholder="Tell me about your project or idea..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <span>📨</span> Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/tarruckwheeler" target="_blank" class="social-link" aria-label="GitHub">
+                    <span>🐙</span>
+                </a>
+                <a href="https://www.linkedin.com/in/tarruck/" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <span>💼</span>
+                </a>
+                <a href="mailto:tarruck@stanford.edu" class="social-link" aria-label="Email">
+                    <span>✉️</span>
+                </a>
+            </div>
+            <p class="footer-text">© 2024 Tarruck Wheeler. All rights reserved.</p>
+            <p class="footer-text">Built with ❤️ and a commitment to accessible design</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hide loader when page loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 500);
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(event.target);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+
+            // Create mailto link
+            const subject = `Message from ${name} via Portfolio`;
+            const body = `From: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+            const mailtoLink = `mailto:tarruck@stanford.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Show success message
+            alert('Thank you for your message! Your email client should open now. If not, please email me directly at tarruck@stanford.edu');
+
+            // Reset form
+            event.target.reset();
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Add keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            // Press '/' to focus on search or navigation
+            if (e.key === '/') {
+                e.preventDefault();
+                document.querySelector('.nav-links a').focus();
+            }
+        });
+
+        // Accessibility: Announce page changes for screen readers
+        function announcePageChange(message) {
+            const announcement = document.createElement('div');
+            announcement.setAttribute('role', 'status');
+            announcement.setAttribute('aria-live', 'polite');
+            announcement.className = 'sr-only';
+            announcement.textContent = message;
+            document.body.appendChild(announcement);
+            
+            setTimeout(() => {
+                document.body.removeChild(announcement);
+            }, 1000);
+        }
+
+        // Track navigation for accessibility
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                const section = this.textContent;
+                announcePageChange(`Navigated to ${section} section`);
+            });
+        });
+
+        // Add typing animation for hero subtitle
+        const subtitle = document.querySelector('.hero .subtitle');
+        const subtitleText = subtitle.textContent;
+        subtitle.textContent = '';
+        let charIndex = 0;
+
+        function typeSubtitle() {
+            if (charIndex < subtitleText.length) {
+                subtitle.textContent += subtitleText.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeSubtitle, 50);
+            }
+        }
+
+        // Start typing animation after page loads
+        window.addEventListener('load', () => {
+            setTimeout(typeSubtitle, 1000);
+        });
+    </script>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>
